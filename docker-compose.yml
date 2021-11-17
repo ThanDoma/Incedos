@@ -4,9 +4,11 @@ services:
     build: .
     restart: always
     ports:
-    - "5001:5000"
+    - "5002:5000"
     volumes:
     - .:/app
+    depends_on:
+    - mongo
     links:
     - mongo
   mongo:
@@ -17,10 +19,10 @@ services:
       - MONGO_INITDB_ROOT_PASSWORD=devroot
     #  - MONGO_INITDB_DATABASE=project
     volumes:
-      - ./database:/data/db
-      - ./database/configdb:/data/configdb
+      - ../database:/data/db
+      - ../database/configdb:/data/configdb
     ports:
-       - "27017:27017"
+       - "27018:27017"
     #   - 27018:27018
     #   - "27019:27019"
   mongo-express:
@@ -44,7 +46,7 @@ services:
     depends_on:
       - mongo
     ports:
-      - "8888:8081"
+      - "8889:8081"
 # volumes:
 #   mongo-data:
 #   mongo-configdb:

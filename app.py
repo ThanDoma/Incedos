@@ -6,7 +6,7 @@ import flask
 app = Flask(__name__)
 #### ConnectDB 
 # app.config["MONGO_URI"] = "mongodb://devroot:devroot@localhost:27017/?authSource=admin&readPreference=primary&ssl=false"
-app.config["MONGO_URI"] = "mongodb://devroot:devroot@localhost:27017/mydb?authSource=admin"
+app.config["MONGO_URI"] = "mongodb://devroot:devroot@172.18.0.2:27017/mydb?authSource=admin"
 mongodb_client = PyMongo(app)
 db = mongodb_client.db
 
