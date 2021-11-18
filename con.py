@@ -1,45 +1,32 @@
-from pymongo import MongoClient
-# pprint library is used to make the output look more pretty
-from pprint import pprint
-import os
-
+from pymongo import MongoClient, collection
 
 
 # connect to MongoDB, change the << MONGODB URL >> to reflect your own connection string
-client = MongoClient('mongodb://devroot:devroot@localhost:27017/mydb?authSource=admin')
-
-# db=client.admin
-# # Issue the serverStatus command and print the results
-# serverStatusResult=db.command("serverStatus")
-# pprint(serverStatusResult) 
+mongo_client = MongoClient('mongodb://devroot:devroot@172.18.0.3:27017/myDB?authSource=admin')
 
 
-mydb = client["mydb"]
-mycol = mydb["to"]
+db = mongo_client.myDB
+collection_object = db.lowLevel
 
+
+
+#mydb = client["myDB"]
+#lowLevel = mydb["lowLevel"]
+# mediumLevel = mydb["mediumLevel"]
+# highLevel = mydb["highLevel"]
 
 # Поиск всех записей в коллекции
-# myquery = {  }
+myquery = {  }
 
-#mydoc = mycol.find(myquery)
 
-#for x in mydoc:
-#  print(x) 
+find_result = collection_object.find(myquery)
 
-# Добавить записи
-# myquery = {"name": "John", "address": "Highway 37"}
+insert_query = {
+'date': "01.01.2001", 
+'username': "test", 
+'danger': "Низкий", 
+'event': "none", 
+'object': "none"
+}
 
-# mydoc = mycol.insert_one(myquery)
-with open('/var/log/auth.log') as f:
-    contents = f.read()
-    print(contents.split())
-
-# count = 0
-# for line in contents:
-#     count += 1
-#     print(f'line {count}: {line}') 
-
-# f = open('','r')
-
-# print(read(f))
-#172.18.0.2
+# result_object = collection_object.insert_one(insert_query)

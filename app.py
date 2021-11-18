@@ -1,25 +1,18 @@
 from flask import Flask, render_template
-from flask_pymongo import PyMongo
-import flask
+from pymongo import results
+from con import find_result
 
 
 app = Flask(__name__)
-#### ConnectDB 
-# app.config["MONGO_URI"] = "mongodb://devroot:devroot@localhost:27017/?authSource=admin&readPreference=primary&ssl=false"
-app.config["MONGO_URI"] = "mongodb://devroot:devroot@localhost:27017/mydb?authSource=admin"
-mongodb_client = PyMongo(app)
-db = mongodb_client.db
+menu = [{"name": "Servers", "url": "serverList"},
+        {"name": "Users", "url": "userList"}]
 
+results = list(find_result)
 
-@app.route("/")
+@app.route('/')
 def index():
-    return render_template("index.html")
+    return render_template('index.html', menu=menu, results=results)
 
-
-@app.route("/add_one")
-def add_one():
-    db.to.insert_one({'title': "todo title3", 'body': "todo body3"})
-    return flask.jsonify(message="success")
 
 if __name__ == '__main__':
     app.run(debug=True)
