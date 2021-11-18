@@ -1,0 +1,107 @@
+* {
+  box-sizing: border-box;
+  padding:5px;
+  margin: 0;
+}
+
+body {
+  font-family: 'Audiowide';
+  font-family: 'Genos', sans-serif;
+  font-family: 'Gideon Roman', ;
+  margin: 0;
+  background-image: url(bg-1.jpg);
+}
+
+/* Style the header */
+.header {
+  position:relative !important;
+  top: -90px !important; 
+  text-align: center;
+  background: #1abc9c;
+  color:none;
+  margin: 0;
+}
+
+textarea {
+  resize: none;
+  background-color: seagreen;
+  text-align-last:justify;
+  width: 650px;
+  height: 500px;
+  float:left;
+  flex-direction: column;
+}
+
+/* Increase the font size of the h1 element */
+.header h1 {
+  font-size: 30px;
+  margin: 0;
+  text-align: left;
+}
+
+/* Style the top navigation bar */
+.navbar {
+  display: flex;
+  overflow: hidden;
+  background-color: #333;
+  position:relative !important;
+  top: -115px !important; 
+  
+}
+
+/* Style the navigation bar links */
+.navbar a {
+  float: left;
+  display: block;
+  color: antiquewhite;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+/* Right-aligned link */
+.navbar a.right {
+  float: right;
+}
+
+/* Change color on hover */
+.navbar a:hover {
+  background-color: none;
+  color: #1abc9c;
+}
+
+/* Column container */
+.row {  
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+  flex: 30%;
+  background-color: #f1f1f1;
+  padding: 20px;
+  position:relative !important;
+  top: -140px !important; 
+}
+
+/* Main column */
+.main {   
+  flex: 55%;
+  background-color: white;
+  padding: 20px;
+  position:relative !important;
+  top: -140px !important; 
+}
+
+/* Fake image, just for this example */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 10px;
+}
+
+html {
+  scroll-behavior:smooth;
+}
