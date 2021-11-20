@@ -1,17 +1,18 @@
 from flask import Flask, render_template
-from pymongo import results
-from con import find_result
+from sshcon import results
 
 
 app = Flask(__name__)
 menu = [{"name": "Servers", "url": "serverList"},
         {"name": "Users", "url": "userList"}]
 
-results = list(find_result)
+
+print(results)
+
 
 @app.route('/')
 def index():
-    return render_template('index.html', menu=menu, results=results)
+    return render_template('index.html', menu=menu)
 
 
 if __name__ == '__main__':
