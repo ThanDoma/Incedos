@@ -16,7 +16,7 @@ def disk_scan():
 def cpu_load(time_line):
     cpu_loadavg = psutil.getloadavg()
     cpu_count = psutil.cpu_count()
-    cpu_percent = [x / cpu_count * 100 for x in cpu_loadavg]
+    cpu_percent = [x / cpu_count * 10 for x in cpu_loadavg]
 
     if time_line == 1:
         print(f'Процессор загружен на {cpu_percent[0]}%') #Загруженность процессора за 1 минуту
@@ -26,6 +26,6 @@ def cpu_load(time_line):
         print(f'Процессор загружен на {cpu_percent[2]}%') #Загруженность процессора за 15 минут3
     
 
-cpu_load(15)
-load_vmemory()
-disk_scan()
+# cpu_load(15)
+# load_vmemory()
+# disk_scan()
