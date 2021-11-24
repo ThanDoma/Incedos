@@ -1,4 +1,4 @@
-from pymongo import MongoClient, collection
+from pymongo import MongoClient
 
 
 # connect to MongoDB, change the << MONGODB URL >> to reflect your own connection string

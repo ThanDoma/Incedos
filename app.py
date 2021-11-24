@@ -1,18 +1,24 @@
 from flask import Flask, render_template
-from sshcon import results
-
+# from pymongo import MongoClient
+# import schedule
+from sshcon import *
 
 app = Flask(__name__)
 menu = [{"name": "Servers", "url": "serverList"},
         {"name": "Users", "url": "userList"}]
 
+# print(job())
 
-print(results)
+# schedule.every(3).seconds.do(job())
+
+# while(True):
+#     schedule.run_pending()
+#     time.sleep(1)
 
 
 @app.route('/')
-def index():
-    return render_template('index.html', menu=menu)
+def main():
+    return render_template('main.html', menu=menu, results = job())
 
 
 if __name__ == '__main__':

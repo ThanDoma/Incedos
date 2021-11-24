@@ -1,8 +1,15 @@
+bcrypt==3.2.0
+cffi==1.15.0
 click==8.0.3
+cryptography==36.0.0
 Flask==2.0.2
-Flask-PyMongo==2.3.0
 itsdangerous==2.0.1
 Jinja2==3.0.3
 MarkupSafe==2.0.1
-pymongo==3.12.1
+paramiko==2.8.0
+pycparser==2.21
+PyNaCl==1.4.0
+six==1.16.0
+ssh2-python==0.22.0
+sshcon==0.3.3
 Werkzeug==2.0.2
