@@ -32,9 +32,6 @@ mycol = mydb["to"]
 #     time.sleep(1) 
 # #remove dockument db
 # mycol.remove({})
-
-
-
 #mycol.remove({})
 
 with open('/var/log/auth.log') as f:
@@ -64,8 +61,9 @@ else:
         new_contents_list = contents[i].split()
         if c == new_contents_list[0:3]:
              search_last_db = i + 1
-    print(search_last_db)
-    print(len(contents))
+    # тест
+    # print(search_last_db)
+    # print(len(contents))
     # print(contents[search_last_db:])
 
     for i in range(len(contents[search_last_db:])):
