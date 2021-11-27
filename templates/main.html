@@ -5,23 +5,42 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <pre escaped="true">
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index.css') }}" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='footer.css') }}" />
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='slayder.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='footer.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='slayder.css') }}">
   <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Genos:wght@600&family=Gideon+Roman&display=swap" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <head>
 <body>
+<!-- <script>
+
+$(function(){
+  window.setInterval(function(){
+    loadNewContent()
+  }, 1000)
+
+   function loadNewContent(){
+     $.ajax({
+      url:"/updateContent",
+      type: "POST",
+      dataType: "json",
+      success: function(data){
+        $(update).replaceWith(data)
+      }
+
+     });
+   }
+  });
+</script> -->
 
 <div class="header">
-  <div class='console-container'><span id='text'></span><div class='console-underscore' id='header'>&#95;</div></div>
-  <script src="js.js"></script>
-  
-  
+  <h1 class="gradient-hover">INCENDOS</h1>
 </div>
 
 <div class="navbar">
@@ -32,21 +51,17 @@
 
 <div class="row">
   <div class="side">
-    <h2 class="center">LOG FILES</h2>
-    <h5>SOME TEXT ABOUT LOGS</h5>
-    <div class="text" style="height:590px;">
-    <textarea readonly>
-      {% for r in results -%}
-      {{r['date'][0]}} {{r['date'][1]}} {{r['date'][2]}} {{r['hostname']}} {{r['event']}}
-      {% endfor %}    
+    <h2 class="center f_center">LOG FILES</h2>
+    <div id="update" class="text" style="height:590px;">
+    <textarea id="updateContent" readonly>
+      {%- for r in results -%}
+      {{r["date"][0]}} {{r["date"][1]}} {{r["date"][2]}} {{r["hostname"]}} {{r["event"]}} {{"\n\n"}}
+      {%- endfor -%}
     </textarea>
     </div>
-    <p>CHO-TO</p>
-    
   </div>
   <div class="main">
     <body>
-
       <div class="adaptivSlayder">
       
         <input type="radio" name="kadoves" id="slaid1" checked>
@@ -85,24 +100,21 @@
       
       </div>
       
-     
-
-    <p>123</p>po
-    <h2>Host status</h2>
+    <h2 class="tex">Host status</h2>
     <textarea class="Host" readonly>SOME TEXT ABOUT host status</textarea>
     
 
   </div>
 </div>
+
 <div class="footer-dark">
   <footer>
       <div class="container">
-          <div class="row">
+          <div class="row f_row">
   
                   <h3>
-                    <img src="img/gh.png" align=”middle”>
-                    </h3>
-                  <ul>>
+                    <img class="image" src="gh.png"></h3>
+                  <ul>
                       <li><a href="https://github.com/anton-holmes">POPOV ANTON</a></li>
                       <li><a href="https://github.com/dlemmer">POPOV DANIIL</a></li>
                       <li><a href="https://github.com/AndWhoElse">MANUYLOV DANIIL</a></li>
@@ -111,12 +123,9 @@
                      
                   </ul>
              
-          </div>
+          </div >
           
       </div>
   </footer>
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
-</body>
 </html>

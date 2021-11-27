@@ -1,5 +1,6 @@
 FROM python:3.10-slim-buster
 RUN apt update -y && apt upgrade -y
+# RUN apt install python-dev -y
 
 WORKDIR /app
 COPY requirements.txt requirements.txt

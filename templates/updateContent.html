@@ -1,0 +1,7 @@
+<div id="update" class="text" style="height:590px;">
+    <textarea id="updateContent" readonly>
+      {%- for r in results -%}
+      {{r["date"][0]}} {{r["date"][1]}} {{r["date"][2]}} {{r["hostname"]}} {{r["event"]}} {{"\n\n"}}
+      {%- endfor -%}
+    </textarea>
+</div>

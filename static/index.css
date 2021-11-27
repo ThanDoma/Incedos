@@ -11,19 +11,22 @@ body {
   font-family: 'Gideon Roman', ;
   margin: 0;
   background-color: #85dcb8;
+  min-height: 100vh;
+    margin: 0px;
+    padding: 0px;
 }
 
 /* Style the header */
 .header {
   position:relative !important;
-  top: -110px !important; 
+  top: -180px !important; 
   text-align: center;
   background: #E8A87C;
   color:none;
   margin: 0;
   display: block;
   height: 160px;
-  
+  width: 100%;
 }
   
 .console-underscore {
@@ -34,11 +37,11 @@ body {
 }
 textarea {
   resize: none;
-  background-color: seagreen;
+  background-color: #85dcb8;
   text-align-last:justify;
-  width: 650px;
-  height: 500px;
-  float:left;
+  width:85%;
+  height: 800px;
+  float:center;
   flex-direction: column;
 }
 
@@ -59,7 +62,7 @@ textarea {
   overflow: hidden;
   background-color: #C38D9E;
   position:relative !important;
-  top: -130px !important; 
+  top: -200px !important; 
   height: 65px;
 
   
@@ -93,8 +96,13 @@ textarea {
 .row {  
   display: flex;
   flex-wrap: wrap;
+  text-align: center;
+  font-size: 27px;
+  
 }
-
+.f_center {
+  font-family: 'Press Start 2P', cursive;
+}
 /* Create two unequal columns that sits next to each other */
 /* Sidebar/left column */
 .side {
@@ -102,7 +110,7 @@ textarea {
   background-color: #f1f1f1;
   padding: 20px;
   position:relative !important;
-  top: -140px !important; 
+  top: -220px !important; 
 }
 
 /* Main column */
@@ -111,20 +119,27 @@ textarea {
   background-color: white;
   padding: 20px;
   position:relative !important;
-  top: -140px !important; 
+  top: -220px !important; 
 }
 .Host {
- width: 100%;
+ width: 80%;
  height: 200px;
 }
-.grid {
-  width: 100%;
-}
 
-html {
+main {
   scroll-behavior:smooth;
 }
-.h3 {
-position: relative;
-  padding-top:-50px;
+
+.image {
+  margin-bottom: 20px;
+  padding-bottom: 30px;
+}
+
+.tex {
+  font-family: 'Press Start 2P', cursive
+}
+.f_row {
+  height: 100px;
+  position:relative !important;
+  top: -50px !important; 
 }
