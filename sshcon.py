@@ -4,13 +4,13 @@ from pymongo import MongoClient
 # import schedule, time
 import datetime as dt
 global host, user, secret, port
-host = '192.168.43.24'
+host = '192.168.1.74'
 user = 'haze'
 secret = '1'
 port = 22
 def job():
 # connect to MongoDB, change the << MONGODB URL >> to reflect your own connection string
-    mongo_client = MongoClient('mongodb://devroot:devroot@172.18.0.4:27017/myDB?authSource=admin')
+    mongo_client = MongoClient('mongodb://devroot:devroot@172.18.0.2:27017/myDB?authSource=admin')
     db = mongo_client.myDB
     collection_object = db.lowLevel
     # collection_object.remove({})
@@ -34,6 +34,7 @@ def job():
             "Nov" : 11,
             "Dec" : 12
         }
+
         cmd = "cd /var/log &&  cat auth.log |\
                 egrep -a -e root | egrep -v closed | egrep -v opened"
         stdin, stdout, stderr = client.exec_command(cmd)

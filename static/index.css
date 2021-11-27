@@ -92,6 +92,12 @@ textarea {
   color: #41B3A3;
 }
 
+
+#updateContent{
+  resize: none;
+}
+
+
 /* Column container */
 .row {  
   display: flex;
