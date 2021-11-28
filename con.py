@@ -1,6 +1,6 @@
 from pymongo import MongoClient
 # pprint library is used to make the output look more pretty
-import schedule, time
+# import schedule, time
 
 # connect to MongoDB, change the << MONGODB URL >> to reflect your own connection string
 client = MongoClient('mongodb://devroot:devroot@localhost:27018/mydb?authSource=admin')

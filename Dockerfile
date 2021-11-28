@@ -1,10 +1,10 @@
-FROM python:3.10-slim-buster
-RUN apt update -y && apt upgrade -y
+FROM python:3.10-alpine
 
 WORKDIR /app
 COPY requirements.txt requirements.txt
 RUN /usr/local/bin/python -m pip install --upgrade pip
-RUN pip3 install -r requirements.txt
+#Изменим строчку ниже, добавив --no-cache-dir
+RUN pip3 install --no-cache-dir -r requirements.txt
 COPY . . 
 # перенес копи был перед WORKDIR /app
 ENV FLASK_APP=app
