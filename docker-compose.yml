@@ -17,8 +17,8 @@ services:
       - MONGO_INITDB_ROOT_PASSWORD=devroot
     #  - MONGO_INITDB_DATABASE=project
     volumes:
-      - ./database:/data/db
-      - ./database/configdb:/data/configdb
+      - ../database:/data/db
+      - ../database/configdb:/data/configdb
     ports:
        - "27017:27017"
     #   - 27018:27018

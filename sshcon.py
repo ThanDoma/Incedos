@@ -5,7 +5,7 @@ from pymongo import MongoClient, results
 import datetime as dt
 # Данные о хосте адрес, имя, пароль, порт
 global host, user, secret, port
-host = '192.168.1.74'
+host = '192.168.43.24'
 user = 'haze'
 secret = '1'
 port = 22
@@ -13,7 +13,7 @@ def job():
     # collection_object.remove({})
     try:
         # Подключение к mongo. Проверьте на корректность адрес хоста в "Networks->incendos_mongo_1"
-        mongo_client = MongoClient('mongodb://devroot:devroot@172.18.0.3:27017/myDB?authSource=admin')
+        mongo_client = MongoClient('mongodb://devroot:devroot@172.18.0.2:27017/myDB?authSource=admin')
         db = mongo_client.myDB #Название БД
         collection_object = db.lowLevel #Наименование коллекции
         # Подключение к ВМ по ssh
@@ -91,4 +91,6 @@ def job():
     except Exception as err:
         print(f"ERROR ->{err}")
 job()
+
+
 

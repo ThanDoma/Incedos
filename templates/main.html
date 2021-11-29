@@ -23,7 +23,16 @@
 $(function(){
   window.setInterval(function(){
     loadNewContent()
-  }, 3000)
+  }, 9000)
+
+
+  // window.setInterval(function(){
+  //   scrollBot()
+  // }, 9500)
+   
+  //  function scrollBot(){
+  //   updateContent.scrollTop = updateContent.scrollHeight
+  //  }
 
    function loadNewContent(){
      $.ajax({
@@ -34,6 +43,7 @@ $(function(){
         $(update).replaceWith(data)
       }
      });
+    //  updateContent.scrollTop = updateContent.scrollHeight
    }
   });
 </script>
@@ -47,6 +57,7 @@ $(function(){
   <a href="#" class='right'>Graphs</a>
   <a href="#" class='right'>Connect OS</a>
 </div>
+
 
 <div class="row">
   <div class="side">

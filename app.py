@@ -9,7 +9,8 @@ menu = [{"name": "Servers", "url": "serverList"},
 
 # print(results)
 # print(job)
-print(job())
+results = job()
+print(results)
 
 @app.route('/')
 def main():
