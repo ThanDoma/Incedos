@@ -10,11 +10,11 @@ menu = [{"name": "Servers", "url": "serverList"},
 # print(results)
 # print(job)
 results = job()
-print(results)
+# print(results)
 
 @app.route('/')
 def main():
-    return render_template('main.html', menu=menu, results=job())
+        return render_template('main.html', menu=menu, results=job())
 
 
 @app.route('/updateContent', methods=["POST"])

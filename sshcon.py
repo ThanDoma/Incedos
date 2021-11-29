@@ -5,9 +5,9 @@ from pymongo import MongoClient, results
 import datetime as dt
 # Данные о хосте адрес, имя, пароль, порт
 global host, user, secret, port
-host = '192.168.43.24'
-user = 'haze'
-secret = '1'
+host = '192.168.100.250'
+user = 'serverdeb'
+secret = '5r4e3w2q1'
 port = 22
 def job():
     # collection_object.remove({})
@@ -37,12 +37,12 @@ def job():
             "Dec" : 12
         }
         # строка с командой для вывода содержимого из файла auth.log с определённым условием
-        cmd = "cd /var/log &&  cat auth.log |\
-                egrep -a -e root | egrep -v closed | egrep -v opened"
+        cmd = "cd /var/log && echo 5r4e3w2q1 | sudo -S cat auth.log | egrep -a -e root | egrep -v closed | egrep -v opened | egrep -v auth.log"
         # выполнение команды выше на ВМ и записывание вывода команды в потоки
         # stdout - поток вывода данных; stderr - поток вывода ошибок
         stdin, stdout, stderr = client.exec_command(cmd)
         str = stdout.read().decode() + stderr.read().decode() # декодировка потоков
+        print(str)
         new_str = str.split("\n")
         count_items = collection_object.count_documents({}) # кол-во элементов в коллекции
         if count_items != 0: # нахождение последнего элемента в кол-ции, если кол-ция не пуста
