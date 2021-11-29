@@ -14,9 +14,6 @@ def detect_devs():
     for device in glob.glob('/sys/block/*'):
         for pattern in dev_pattern:
             if re.compile(pattern).match(os.path.basename(device)):
-                # print('Device:: {0}, Size:: {1} GiB'.format(device, size(device)))
                 sizes = round(size(device),2)
                 print(f'Устройство: {device}, размер: {sizes} GiB')
  
-if __name__=='__main__':
-    detect_devs()
