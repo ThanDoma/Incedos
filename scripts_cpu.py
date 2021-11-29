@@ -16,6 +16,7 @@ for key in cpu_dict:
     cpu_load_percent = cpu_key[18:23]
     cpu_load_percent = cpu_load_percent.replace(',', '.')
     sp.append(cpu_load_percent)
-for i in range(2, len(sp)):
-    cpu = float(sp[i])
-    print(f'Загруженность процессора: {cpu}%')
+
+# for i in range(2, len(sp)):
+#     cpu = float(sp[i])
+#     print(f'Загруженность процессора: {cpu}%')
