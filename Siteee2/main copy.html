@@ -34,6 +34,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.1/chart.min.js" integrity="sha512-O2fWHvFel3xjQSi9FyzKXWLTvnom+lOYR/AUEThL/fbP4hv1Lo5LCFCGuTXBRyKC4K4DJldg5kxptkgXAzUpvA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 </div>
+
 <div class="row">
   <div class="side">
     <h2 class="center f_center">LOG FILES</h2>
@@ -50,11 +51,11 @@
   <div class="main">
     <body>
       <div>
-        <canvas id='MyChart'></canvas>
+        <frameset><iframe src="graph.html" frameborder="0"></iframe></frameset>
         <div>
         </div>
             </div>
-      
+            
     <h2 class="text">Host status</h2>
     <textarea class="Host" readonly >SOME TEXT ABOUT host status</textarea>
     
@@ -73,7 +74,7 @@
   <footer>
       <div class="container">
           <div class="row f_row">
-            <frameset><iframe src="graph.html" frameborder="0"></iframe></frameset>
+  
                   <h3>
                     <img class="image" src="img/gh.png"></h3>
                   <ul>

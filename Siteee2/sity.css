@@ -1,0 +1,54 @@
+body {
+    background: url(img/gg.jpg) no-repeat;
+    background-attachment: fixed;  
+    background-size: cover;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  fieldset {
+    margin: auto;
+    position: fixed; top:0; right:0;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 23px;
+    text-align: center;
+  }
+  .textarea{
+    resize: none;
+    width:30%;
+    height: 75%;
+  }
+  .flash {
+    color: #FB4264;
+  font-size: 32px;
+  line-height: 32px;
+  text-shadow: 0 0 3vw #F40A35;
+}
+  .flash {
+  animation: flash 4.0s ease infinite;
+  -moz-animation: flash 4.0s ease infinite;
+  -webkit-animation: flash 4.0s ease infinite;
+  }
+  @keyframes flash {
+  0%,
+  100% {
+  
+  color: #ff4d00;
+  }
+  50% {
+  
+  color: #fc2847;
+  }
+  }
+  .podkl {
+    resize: none;
+    width:50%;
+    height: 35%; 
+    position: fixed;
+    bottom: 0; 
+    right: 0; 
+    font-size: 24px;
+    background: rgba(255,255,255,0.05);
+  }
+  
