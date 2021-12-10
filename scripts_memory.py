@@ -1,5 +1,4 @@
 import glob
-import re
 import os
 
 dev_pattern = ['sd.*','mmcblk*']
